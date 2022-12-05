@@ -1,0 +1,45 @@
+
+//ANIKET SINGH
+// OBJECTIVE -print polynomial;
+#include <stdio.h>
+
+
+struct node
+{
+    int cons;
+    int powe;
+    struct node *next;
+    
+};
+int main()
+{
+    struct node n[3];
+     struct node *start,*temp;
+   int i=0;
+   while(i<3)
+   {printf("enter cons and powe ");
+       scanf("%d%d",&n[i].cons,&n[i].powe);
+       i++;}
+   start=&n[0];
+   n[0].next=&n[1];
+   n[1].next=&n[2];
+   n[2].next=NULL;
+   temp=start;
+
+ printf("\nprint the data\n");
+   while(temp!=NULL)
+   {
+    
+       printf("%dx^%d",temp->cons,temp->powe);
+       if(temp<&n[2])
+       {
+           printf("+");
+       }
+       else
+       printf(" ");
+       
+       temp=temp->next;
+   }
+    return 0;
+}
+
